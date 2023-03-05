@@ -1,0 +1,306 @@
+@charset "UTF-8";
+
+/*  モバイルファースト */
+
+/* 共通設定 */
+body{
+    font-family: 'Kiwi Maru', serif;
+    overflow-x: hidden;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    display:block;
+    text-decoration: none;
+}
+h2{
+    font-size: clamp(25px, 1rem + 2vw, 50px);
+}
+h3{
+    font-size: clamp(20px, 1rem + 1vw, 40px);
+}
+img{
+    display: block;
+}
+p,a{
+    color: #000;
+    font-size: clamp(16px, 1rem + 3vw, 24px);
+}
+
+/* 個別設定 */
+
+/* hamburger */
+#hamburger{
+    background-image: url(./img/bars_24.svg);
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: 49px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto ;
+    width: 40px;
+    height: 40px;
+}
+#hamburger:hover{
+    background-color: gray;
+}
+#hamburger.on{
+    background-image: url(./img/cross_24.svg);
+}
+.navigation{
+    background-color:rgba(255, 255, 255, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+.navigation.on{
+    display: flex;
+}
+.nav-contents{
+    position: absolute;
+    padding: 0;
+    font-size: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.nav-contents-item{
+    margin: 10px 20px;
+}
+.nav-contents-item a{
+    width: 300px;
+    color: #000;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+    padding: 25px;
+}
+.nav-contents-item a:hover{
+    color: black;
+    background-color: rgb(255, 224, 183);
+    border-top: 7px solid rgb(179, 104, 34);
+    border-bottom: 3px solid rgb(179, 104, 34);
+    border-radius: 10px;
+}
+/* header */
+.top{
+    background-image: url(./img/パン.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 40vh;
+   
+}
+.title{
+    background-color: rgba(237, 189, 138, 0.4);
+    border: 7px rgba(144, 83, 26, 0.5) solid;
+    border-radius: 10%;
+    display: inline-block;
+    width: 80%;
+    margin: 50px 9.5%;
+    text-align: center;
+}
+
+/* main */
+.center{
+    margin: 50px auto;
+}
+.main-section{}
+.main-section img{
+    margin: 10px auto;
+    width:  clamp(300px, 50%, 600px);
+    height: auto;
+}
+.main-section h2{
+    width: 95%;
+    text-align: center;
+}
+.main-section p{
+    margin: 10px auto;
+    width: 78%;
+}
+.sub-sections{}
+.sub-sections section h3{
+    width: 90%;
+    text-align: center;
+}
+.sub-sections section p{
+    margin: 10px auto;
+    width: 78%;
+}
+.sub-sections section img{
+    margin: 10px auto;
+    width: clamp(200px ,50%, 500px);
+    height: auto;
+}
+.sub{
+    color: #fff;
+    background-image: url(./img/wood-texture_00008.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 0;
+}
+.sub h4{
+    width: 90%;
+    margin: 10px auto;
+    font-size: clamp(16px, 1rem + 1vw, 20px);
+    border-bottom: 3px aqua solid;
+
+}
+.sub a{
+    color: #fff;
+    margin: 10px 3%;
+    border-bottom: 1px aqua solid;
+}
+.sub p{
+    color: #fff;
+    width: 90%;
+    line-height: 1.9;
+}
+/* footer */
+.bottom{
+    background-color: rgb(179, 104, 34);
+}
+/* .how{} */
+/* .way-info{} */
+/* .way-info-text{} */
+.way-info-text h3{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    border-bottom: 3px aqua solid;
+}
+.way-info-text p{
+    line-height: 2.7;
+}
+/* .location-map{} */
+.location-map iframe{
+    width: 100vw;
+}
+.information{
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+label{
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+textarea{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px #ddd solid;
+    border-radius: 1px;
+    padding: 10px;
+    font-size: clamp(12px, 1rem, 18px);
+}
+input[type="text"],
+input[type="email"]{
+    width: 100%;
+    max-width: 240px;
+}
+textarea{
+    width: 100%;
+    max-width: 480px;
+}
+.button{
+    background-color: rgb(114, 27, 27);
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 3px rgb(61, 15, 15);
+    border-radius: 5px;
+    top: -2px;
+    padding: 10px 20px;
+}
+.button:hover{
+    box-shadow: 0 1px rgb(61, 15, 15);
+    top: 1px;
+}
+/* PC対応 */
+@media screen and (min-width: 1024px) {
+    /* hamburger */
+    #hamburger{
+        display: none;
+    }
+    /* top */
+    .top{
+        height: 45vh;
+    }
+    .navigation{
+        background-color: transparent;
+        display: flex;
+        position: static;
+        justify-content: space-around;
+        z-index: 0;
+        width: auto;
+        height: 1%;
+    }
+    .nav-contents{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: unset;
+    }
+    .nav-contents-item{
+        display: inline-block;
+        height: 35px;
+        border-radius: 2px;
+        line-height: 35px;
+    }
+    .nav-contents-item a{
+        background-color: rgba(255, 255, 255, 0.5);
+        color: #000;
+        display: flex;
+        font-size: 18px;
+        padding: 0 15px;
+        transition: color .3s;
+        width: auto;
+    }
+    /* main */
+    .center{
+        display: flex;
+    }
+    .center article{
+        width: 75%;
+    }
+    .sub-sections{
+        display: flex;
+    }
+    .sub{
+        text-align: center;
+        margin: 10px;
+        width: 25%;
+    }
+    /* footer */
+    .bottom{
+        display: flex;
+    }
+    .how{
+        flex: 1;
+    }
+    .way-info-text{
+        text-align: center;
+    }
+    .location-map iframe{
+        width: 85%;
+        margin: 25px 45px;
+    }
+    .information{
+        flex: 1;
+        margin: 10% auto;
+    }
+    .button{
+        margin-top: 30px;
+    }
+}
